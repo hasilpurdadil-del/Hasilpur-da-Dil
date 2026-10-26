@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Youtube, Play, Sparkles, Copy, Check, ArrowRight, ShieldCheck, Flame, Eye } from 'lucide-react';
+import { Youtube, Play, Sparkles, Copy, Check, ArrowRight, ShieldCheck, Flame, Eye, Smartphone } from 'lucide-react';
 import { CHANNEL_INFO, FEATURED_VIDEOS, VideoItem } from '../data/channelData';
 import { soundFX } from '../utils/audio';
 
 interface HeroSectionProps {
   onPlayVideo: (video: VideoItem) => void;
+  onOpenPlayStoreModal?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onPlayVideo }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onPlayVideo, onOpenPlayStoreModal }) => {
   const [copied, setCopied] = useState(false);
   const heroVideo = FEATURED_VIDEOS[0];
 
@@ -71,29 +72,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onPlayVideo }) => {
 
           {/* CTA Buttons */}
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4">
+            {/* Rana Brothers MODs Download Hub */}
+            <a
+              href="#download-portal"
+              onClick={() => soundFX.playChime(800, 'sine', 0.25)}
+              className="group relative inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white font-extrabold text-base shadow-xl shadow-red-600/40 hover:shadow-red-500/60 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="text-xl">🇵🇰</span>
+              <span className="relative z-10 tracking-wide">Rana Brothers MODs (Download)</span>
+              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+            </a>
+
             {/* Main Primary Button: Subscribe on YouTube */}
             <a
               href={CHANNEL_INFO.youtubeUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundFX.playChime(750, 'sine', 0.25)}
-              className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-purple-600 text-white font-bold text-base sm:text-lg shadow-xl shadow-red-600/30 hover:shadow-red-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#ff0000] hover:bg-red-700 text-white font-bold text-base shadow-xl shadow-red-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <Youtube className="w-6 h-6 fill-white group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10 tracking-wide">Subscribe on YouTube</span>
-              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <Youtube className="w-5 h-5 fill-white group-hover:rotate-12 transition-transform duration-300" />
+              <span className="tracking-wide">Subscribe @Aivideo5677</span>
             </a>
 
-            {/* Secondary Button: Explore Videos */}
+            {/* Playable 3D Game CTA Button */}
             <a
-              href="#videos"
-              onClick={() => soundFX.playClick()}
-              className="inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white font-semibold text-base border border-purple-500/30 hover:border-purple-400/60 backdrop-blur-md transition-all duration-300"
+              href="#game"
+              onClick={() => soundFX.playChime(600, 'triangle', 0.2)}
+              className="group inline-flex items-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-bold text-base shadow-xl shadow-emerald-600/30 hover:scale-[1.02] transition-all duration-300"
             >
-              <Play className="w-4 h-4 text-cyan-400 fill-cyan-400" />
-              <span>Explore Latest Videos</span>
+              <span className="text-lg">🎮</span>
+              <span>Play 3D BUSSID</span>
             </a>
+
+            {/* Install App / Play Store CTA Button */}
+            {onOpenPlayStoreModal && (
+              <button
+                onClick={() => {
+                  soundFX.playClick();
+                  onOpenPlayStoreModal();
+                }}
+                className="group inline-flex items-center gap-2.5 px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-emerald-300 hover:text-white font-bold text-base border border-emerald-500/40 backdrop-blur-md shadow-lg shadow-emerald-950/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              >
+                <Smartphone className="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" />
+                <span>📲 Play Store / Install App</span>
+              </button>
+            )}
           </div>
 
           {/* Feature Badges */}

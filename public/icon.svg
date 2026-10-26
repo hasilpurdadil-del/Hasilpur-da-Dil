@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="50%" stop-color="#14142b"/>
+      <stop offset="100%" stop-color="#052e16"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="pakGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="truckRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer background circle/squircle -->
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <rect x="12" y="12" width="488" height="488" rx="98" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.8"/>
+
+  <!-- Pakistani Crescent and Star Subtle Background watermark -->
+  <path d="M 370 120 A 90 90 0 1 0 370 280 A 70 70 0 1 1 370 120 Z" fill="#10b981" opacity="0.25"/>
+  <polygon points="340,180 348,204 372,204 353,218 360,242 340,228 320,242 327,218 308,204 332,204" fill="#fbbf24" opacity="0.3"/>
+
+  <!-- Truck Cab / Dumper Illustration (Heavy Pakistani Truck Art Style) -->
+  <g transform="translate(66, 120)">
+    <!-- Dumper Bed (Elevated / Heavy Duty) -->
+    <path d="M 30 140 L 190 80 L 230 140 L 30 180 Z" fill="url(#truckRed)" stroke="#fbbf24" stroke-width="4"/>
+    <line x1="60" y1="130" x2="80" y2="170" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="110" y1="115" x2="130" y2="155" stroke="#fbbf24" stroke-width="3"/>
+    <line x1="160" y1="100" x2="180" y2="140" stroke="#fbbf24" stroke-width="3"/>
+
+    <!-- Truck Cab Main Body -->
+    <path d="M 220 120 L 310 120 L 340 180 L 340 230 L 210 230 Z" fill="url(#pakGreen)" stroke="#fbbf24" stroke-width="5"/>
+    <!-- Cab Roof Crown (Pakistani Taj) -->
+    <path d="M 230 120 L 250 85 L 280 85 L 300 120 Z" fill="url(#gold)"/>
+    <circle cx="265" cy="85" r="8" fill="#ef4444"/>
+
+    <!-- Front Windshield -->
+    <path d="M 250 135 L 300 135 L 325 180 L 250 180 Z" fill="#38bdf8" opacity="0.85" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Front Grille & Bullbar -->
+    <rect x="330" y="185" width="22" height="40" rx="4" fill="#94a3b8" stroke="#fbbf24" stroke-width="3"/>
+    <!-- Headlights -->
+    <circle cx="332" cy="195" r="7" fill="#fef08a" filter="url(#glow)"/>
+    <circle cx="332" cy="215" r="7" fill="#fef08a" filter="url(#glow)"/>
+
+    <!-- Chassis Base -->
+    <rect x="20" y="225" width="320" height="20" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Heavy Wheels -->
+    <!-- Rear Dual Wheel 1 -->
+    <circle cx="70" cy="245" r="32" fill="#0f172a" stroke="#fbbf24" stroke-width="5"/>
+    <circle cx="70" cy="245" r="16" fill="#64748b" stroke="#e2e8f0" stroke-width="3"/>
+    <circle cx="70" cy="245" r="6" fill="#ef4444"/>
+
+    <!-- Rear Dual Wheel 2 -->
+    <circle cx="150" cy="245" r="32" fill="#0f172a" stroke="#fbbf24" stroke-width="5"/>
+    <circle cx="150" cy="245" r="16" fill="#64748b" stroke="#e2e8f0" stroke-width="3"/>
+    <circle cx="150" cy="245" r="6" fill="#ef4444"/>
+
+    <!-- Front Steer Wheel -->
+    <circle cx="290" cy="245" r="32" fill="#0f172a" stroke="#fbbf24" stroke-width="5"/>
+    <circle cx="290" cy="245" r="16" fill="#64748b" stroke="#e2e8f0" stroke-width="3"/>
+    <circle cx="290" cy="245" r="6" fill="#ef4444"/>
+  </g>
+
+  <!-- Typography Banner: RANA BROTHERS MODS -->
+  <rect x="56" y="405" width="400" height="60" rx="16" fill="#dc2626" stroke="#fbbf24" stroke-width="3"/>
+  <text x="256" y="445" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="26" fill="#ffffff" text-anchor="middle" letter-spacing="3">
+    RANA BROTHERS MODS
+  </text>
+  <text x="256" y="388" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="#fbbf24" text-anchor="middle" letter-spacing="4">
+    ★ 3D BUSSID SIMULATOR ★
+  </text>
+</svg>
